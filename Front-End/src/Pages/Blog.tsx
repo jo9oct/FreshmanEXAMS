@@ -1,11 +1,11 @@
 
 import React from "react";
-import Header from "../components/Header.tsx"
+import BlogPost from "../components/BlogPost.tsx"
 
 const Blog: React.FC = () => {
     return (
         <>
-            <Header/>
+            <BlogPost/>
         </>
     );
 };

@@ -1,11 +1,10 @@
 
 import React from "react";
-import Header from "../components/Header.tsx"
 
 const Contact: React.FC = () => {
     return (
         <>
-            <Header/>
+        
         </>
     );
 };

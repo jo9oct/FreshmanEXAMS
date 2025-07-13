@@ -5,102 +5,206 @@
   --bg-color-w:#fff;
   --bg-color-d:#000;
   --border-lightgray:1px solid #CDC6C6;
+  --bg-color-bb:#170F2F;
+  --box-shadow-w:0 4px 50px rgba(5, 5, 100, 0.1);
 }
 
+*{
+  box-sizing: border-box;
+}
 
-.all{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--bg-color-w);
+/* header */
+
+header{
   border-bottom: var(--border-lightgray);
-  padding: 15px;
 }
-
-.all1{
-  display: flex;
-  gap: 10px;
-  align-items: center;
+header .all1 {
+  cursor: pointer;
 }
-.all1 i{
-  font-size: x-large;
-}
-.all1 h4 span{
+header .all1 span{
   color: var(--grean-color);
 }
-.all2{
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  align-items: center;
-}
-.all2 a,.all3 a{
-  text-decoration: none;
-  color: var(--bg-color-d);
-}
-
-.all3{
-  display: flex;
-  gap: 35px;
-  align-items: center;
-}
-.all .profile{
+header .profile{
+  background-color: tomato;
   width: 40px;
   height: 40px;
-  padding: 0;
-  background-color: tomato;
-  border-radius: 50%;
+}
+header .all2{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap : 40px;
+  align-items:center;
 }
-.all .profile p{
-  color: var(--bg-color-w);
-  font-size: x-large;
-  margin-top: 10PX;
+.all2 a{
+  font-size: large;
+  color: #000000d7;
 }
-.all3 button{
+.icon-hide{
+  display: none;
+}
+header button{
   border: 1px solid var(--grean-color);
-  border-radius: 10px;
   background-color: var(--bg-color-w);
-  padding: 5px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.all3 .moon{
-  font-size: larger;
-}
-.all3 .search{
+header .search{
   display: flex;
   align-items: center;
   border: 1px solid var(--lightGray-color);
   border-radius: 10px;
   padding-left: 15px;
 }
-.all3 .search input{
+header .all2 .s1{
+  display: none;
+}
+header .search input{
   border: none;
   outline: none;
 }
-
-.all2 a:hover{
+.icon-hide .menu{
+  font-size: xx-large;
+}
+header .all2 a:hover{
   color: var(--grean-color);
   transition: all .5s;
 }
-.all3 button:hover{
+header .all1:hover h4{
+  transform: scale(1.05);
+  transition: all .5s;
+}
+header button:hover{
   border: none;
   transition: all .5s;
   transform: scale(1.1);
 }
-.all3 .search:hover{
+header  .search:hover{
   transform: scale(1.05);
   transition: all .5s;
 }
-.all3 .moon:hover{
+header .all3 .moon:hover{
   transition: all .5s;
   transform: rotate(-30deg);
 }
-.all3 .profile:hover{
+header .all3 .profile:hover{
   transition: all .5s;
   border:2px solid var(--grean-color);
+  transform: rotate(360deg);
+}
+
+/* Footer  */
+footer hr,
+footer .border-top {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Banner */
+.AdBanner{
+  border-top: var(--border-lightgray);
+  border-bottom: var(--border-lightgray);
+  height: 100px;
+  margin: 110px 0px 40px 0px;
+}
+
+/* BlogPost */
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.bg-c-green {
+  background-color: #179227; 
+}
+
+
+
+/* all media */
+
+@media screen and (max-width:1200px) {
+
+  /* Header */
+    header .all3 .search,header .all3 button {
+      display: none;
+    }
+    header .all2 a,header .all2 .s1 {
+      display: block;
+    }
+    header .all2 {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      margin: 20px;
+      padding: 20px;
+      margin-top: 100px;
+      box-shadow: var(--box-shadow-w);
+      width: 96%;
+      background-color: white;
+      border-radius: 10px;
+    }
+    header .all2 a{
+      margin-bottom: 30px;
+      padding: 10px 30px;
+      border-bottom: var(--border-lightgray);
+    }
+   header .all2 .s1  button{
+       margin-bottom: 30px;
+       margin-left: 30px;
+       display: flex;
+   }
+   .all2 .s1 .search{
+     box-shadow: 10px 10px 150px rgba(19, 15, 15, 0.234);
+     padding: 10px;
+     border: none;
+   }
+   .all1{
+      margin-left: -50px;
+   }
+   .all3 .moon{
+      display: none;
+   }
+   header .all3 .profile  {
+      visibility: hidden;
+   }
+   .icon-hide{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-right: -40px;
+   }
+   .hide{
+    visibility: hidden;
+  }
+}
+
+  /* Header */
+  header .all1{
+      margin-left: 1px;
+  }
+  header .icon-hide{
+      margin-right: 20px;
+  }
+@media screen and (max-width:430px) {
+  /* header */
+  header .icon-hide{
+    margin-right: 20px;
+  }
+  header .icon-hide a{
+    margin: 0 -10px;
+  }
+  header .icon-hide .moon{
+    margin-left: -15px;
+  }
+  header .all1{
+    margin-left: -10px;
+}
+}
+@media screen and (max-width:360px) {
+  /* header */
+   header .all1{
+    margin-left: -10px;
+  }
+  header .icon-hide{
+    flex-direction: column-reverse;
+  }
 }
 

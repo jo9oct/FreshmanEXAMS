@@ -1,11 +1,11 @@
 
 import React from "react";
-import Header from "../components/Header.tsx"
+import AllCourseCards from "../components/AllCourseCards"
 
 const Courses: React.FC = () => {
     return (
         <>
-            <Header/>
+            <AllCourseCards/>
         </>
     );
 };

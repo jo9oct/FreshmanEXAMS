@@ -1,14 +1,15 @@
 
 import React from "react";
-import Header from "../components/Header.tsx"
+import CourseCards from "../components/CourseCards"
 
 const Home: React.FC = () => {
     return (
         <>
-            <Header/>
+            <CourseCards/>
         </>
     );
 };
 
 
 export default Home;
+
