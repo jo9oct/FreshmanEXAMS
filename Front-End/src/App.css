@@ -17,6 +17,7 @@
 
 header{
   border-bottom: var(--border-lightgray);
+  background-color: white;
 }
 header .all1 {
   cursor: pointer;
@@ -51,9 +52,17 @@ header .search{
   border: 1px solid var(--lightGray-color);
   border-radius: 10px;
   padding-left: 15px;
+  background-color: white;
+  margin-right: 20px;
 }
 header .all2 .s1{
   display: none;
+}
+header button{
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+}
+header  a{
+  color: black;
 }
 header .search input{
   border: none;
@@ -207,4 +216,25 @@ footer .border-top {
     flex-direction: column-reverse;
   }
 }
+
+
+/* HeaderToggle */
+.HeaderToggle a,.HeaderToggle *,.HeaderToggle p a{
+  color: white;
+}
+.HeaderToggle{
+  background-color: var(--bg-color-bb);
+}
+.HeaderToggle .all2{
+  background-color: #000;
+  border-bottom: 1px solid 124971;
+}
+.HeaderToggle button{
+  background-color: #000;
+  box-shadow: 10px 10px 100px white;
+}
+.HeaderToggle .search i{
+  color: #000000;
+}
+
 

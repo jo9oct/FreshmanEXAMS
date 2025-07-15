@@ -1,10 +1,11 @@
 
 import React from "react";
 
-const Footer: React.FC = () => {
+const AdminFooter: React.FC = () => {
     return (
         <>
-            <footer className=" text-white" style={{ backgroundColor: "#170F2F" }}>
+        
+        <footer className=" text-white" style={{ backgroundColor: "#170F2F" }}>
                 <div className="container py-5">
                     <div className="row gy-5">
 
@@ -22,32 +23,31 @@ const Footer: React.FC = () => {
 
                         <div className="col-12 col-md-7 d-flex flex-wrap justify-content-around gap-4">
                             <div>
-                            <p className="fw-bold">Quick Links</p>
-                            <p>All Courses</p>
-                            <p>Study Tips</p>
-                            <p>About Us</p>
-                            <p>Contact</p>
+                                <p className="fw-bold">Quick Links</p>
+                                <p>All Courses</p>
+                                <p>Study Tips</p>
+                                <p>About Us</p>
+                                <p>Contact</p>
                             </div>
                             <div>
-                            <p className="fw-bold">Legal</p>
-                            <p>Privacy Policy</p>
-                            <p>Terms of Service</p>
+                                <p className="fw-bold">Legal</p>
+                                <p>Privacy Policy</p>
+                                <p>Terms of Service</p>
                             </div>
                         </div>
-
+                        <div className="my-3 pt-3 border-top border-light ">
+                            <p className="text-center mb-0">
+                                © 2024 FreshmanExam.com. All rights reserved. Made with ❤️ for Ethiopian students.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </footer>
 
-            <div className="my-3 pt-3 border-top border-light ">
-            <p className="text-center mb-0">
-                © 2024 FreshmanExam.com. All rights reserved. Made with ❤️ for Ethiopian students.
-            </p>
-            </div>
-             
         </>
     );
 };
 
 
-export default Footer;
+export default AdminFooter;
+

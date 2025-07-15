@@ -1,7 +1,8 @@
 
+
 import React from "react";
 
-const Admin: React.FC = () => {
+const AdminAnalytics: React.FC = () => {
 
 
 
@@ -13,4 +14,4 @@ const Admin: React.FC = () => {
 };
 
 
-export default Admin;
+export default AdminAnalytics;

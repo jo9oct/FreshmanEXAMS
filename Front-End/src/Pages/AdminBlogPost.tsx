@@ -1,7 +1,7 @@
 
 import React from "react";
 
-const Admin: React.FC = () => {
+const AdminBlogPost: React.FC = () => {
 
 
 
@@ -13,4 +13,4 @@ const Admin: React.FC = () => {
 };
 
 
-export default Admin;
+export default AdminBlogPost;

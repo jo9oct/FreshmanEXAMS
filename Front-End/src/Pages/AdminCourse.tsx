@@ -1,9 +1,7 @@
 
 import React from "react";
 
-const Admin: React.FC = () => {
-
-
+const AdminCourse: React.FC = () => {
 
     return (
         <>
@@ -13,4 +11,4 @@ const Admin: React.FC = () => {
 };
 
 
-export default Admin;
+export default AdminCourse;
