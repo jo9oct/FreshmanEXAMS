@@ -10,14 +10,14 @@ const Footer: React.FC = () => {
 
                         <div className="col-12 col-md-5 d-flex flex-column gap-3">
                             <div className="d-flex align-items-center gap-3">
-                            <img src="/public/exam.png" alt="Logo" width={55} height={55} />
+                            <img src="/exam.png" alt="Logo" width={55} height={55} />
                             <h4 className="mb-0">Freshman <span style={{ color: "#179227" }}>EXAM</span></h4>
                             </div>
                             <p>
                             Empowering Ethiopian university freshman students with comprehensive exam preparation
                             resources and practice quizzes.
                             </p>
-                            <img src="/public/images__1_-removebg-preview.png" alt="Ethiopia" width={84} height={65} />
+                            <img src="/images__1_-removebg-preview.png" alt="Ethiopia" width={84} height={65} />
                         </div>
 
                         <div className="col-12 col-md-7 d-flex flex-wrap justify-content-around gap-4">

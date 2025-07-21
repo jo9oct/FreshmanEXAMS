@@ -58,6 +58,7 @@ const Header: React.FC = () => {
               type="search"
               className="form-control"
               placeholder="Search ..."
+              // style={{all:"unset" , outline:"none" , border:"none"}}
             />
           </div>
         </div>

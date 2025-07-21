@@ -5,6 +5,7 @@ import React from "react";
 const DetailBlogPost: React.FC = () => {
     return (
         <> 
+        
             <div className="card d-f shadow border-0" style={{ width: '60rem'}}>
                 <img src="/public/images (3).jpg" className="card-img-top" alt="..." />
                 <div className="card-body" >

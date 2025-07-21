@@ -1,14 +1,13 @@
 
 import React, { useState,useEffect } from "react";
-import CourseCards from "../components/CourseCards.tsx"
+// import CourseCards from "../components/CourseCards.tsx"
 import axios from "axios"
 import toast  from "react-hot-toast";
 import Loader1 from "../components/ui/Loader1"
 import type { course } from "../types/Course";
-import api from "../lib/axios.tsx";
-import RateLimitWarning from "../components/ui/TimeLimit.tsx"
 
-const Courses: React.FC = () => {
+
+const Try: React.FC = () => {
     
     const [IsRateLimited,setIsRateLimited] = useState(false)
     const [CourseData,setCourseData] = useState<course[]>([])
@@ -17,13 +16,13 @@ const Courses: React.FC = () => {
     useEffect(() => {
         const fetchData=async () => {
             try{
-                const res=await api.get<course[]>('/course')
+                const res=await axios.get<course[]>('http://localhost:5000/api/course')
                 console.log(res.data)
                 setCourseData(res.data)
                 setIsRateLimited(false)
             }
             catch(error){
-                console.log("error fetching Data" , error)
+                console.log("error fetching notes" , error)
                 if (axios.isAxiosError(error) && error.response?.status === 429) {
                     setIsRateLimited(true);
                 }
@@ -41,25 +40,24 @@ const Courses: React.FC = () => {
 
     return (
         <>
-             {Loading && <Loader1 />}
-            {CourseData.length > 0 && !IsRateLimited && (
-
-                <div className="container py-5">
-                    <div className="row gx-4 gy-4">
-                        {CourseData.map((data: course) => (
-                            <div key={data._id} className="col-12 col-md-6 col-lg-4">
-                            <CourseCards data={data} />
-                            </div>
-                        ))}
+            {Loading && <Loader1/>}
+            {
+                <div>
+                {CourseData.map((data: course, index: number) => (
+                    <div key={index}>
+                    <h3>Hello</h3>
+                    <h3>{data.CourseId}</h3>
+                    <h3>{data.CourseTitle}</h3>
+                    <p>{data.CourseDescription}</p>
                     </div>
+                ))}
                 </div>
-
-            )}
-            {IsRateLimited && <RateLimitWarning/>}
+            }
+            {IsRateLimited && <h1>time limit ended</h1>}
         </>
     ); 
 
 };
 
 
-export default Courses;
+export default Try;

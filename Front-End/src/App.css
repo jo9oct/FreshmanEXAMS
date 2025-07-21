@@ -1,6 +1,7 @@
 
 :root{
   --grean-color:#179227;
+  --light-grean-color:#22CA39;
   --lightGray-color:#EBE6E6;
   --bg-color-w:#fff;
   --bg-color-d:#000;
@@ -11,6 +12,13 @@
 
 *{
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* color: ; */
+}
+
+b{
+  color: #ce0e0ecd;
 }
 
 /* header */
@@ -123,7 +131,6 @@ footer .border-top {
 .bg-c-green {
   background-color: #179227; 
 }
-
 
 
 /* all media */
