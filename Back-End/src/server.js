@@ -5,6 +5,7 @@ import cors from "cors"
 import {connectDB} from "./config/db.js"
 import CourseRoutes from "./routes/Course.route.js"
 import ChapterRoutes from "./routes/Chapter.route.js"
+import BlogRoutes from "./routes/Blog.route.js"
 import  rateLimiter from "./Middleware/rateLimiter.js"
 
 dotenv.config()
@@ -22,6 +23,7 @@ app.use(rateLimiter)     //TimeLimit Middleware
 app.use(express.json());
 app.use("/api/course",CourseRoutes);
 app.use("/api/chapter",ChapterRoutes);
+app.use("/api/Blog",BlogRoutes);
 
 
 app.listen(PORT , () =>{
