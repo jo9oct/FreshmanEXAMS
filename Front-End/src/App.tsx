@@ -38,12 +38,12 @@ function App() {
           <Route path="/blog/detail" element={<BlogDetail />} />
         </Route>
         <Route element={<AdminMenuLayout />}>
-          <Route path="/admin/dashboard" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/analytics" element={<AdminAnalytics />} />
           <Route path="/admin/BlogPost" element={<AdminBlogPost />} />
           <Route path="/admin/chapters" element={<AdminChapters />} />
-          <Route path="/admincourse" element={<AdminCourse />} />
+          <Route path="/admin/course" element={<AdminCourse />} />
           <Route path="/admin/question" element={<AdminQuestions />} />
         </Route>
       </Routes>
