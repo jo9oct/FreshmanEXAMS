@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import type { Chapter,Course } from "../types/Course.ts";
+import type { Chapter } from "../types/Course.ts";
 import { useNavigate } from 'react-router-dom';   
 
 type ChapterCardsProps = {
@@ -11,6 +11,10 @@ type ChapterCardsProps = {
 const CourseDetail: React.FC<ChapterCardsProps> = ({data}) => {
 
     const navigate=useNavigate() 
+
+    const GoTOQuiz = () => {
+        navigate("/Course/QuizModes" , {state: {data : data}})
+    }
 
     return (
         
@@ -25,7 +29,7 @@ const CourseDetail: React.FC<ChapterCardsProps> = ({data}) => {
                     </div>
                     <div className="d-flex gap-3 flex-sm-row flex-column">
                         <button className="p-2 w-100 w-sm-50 rounded-1 text-white border-0" style={{backgroundColor:"#179227"}} onClick={() => navigate(`/courses`)}>View course</button>
-                        <button className="p-2 w-100 w-sm-50 rounded-1 bg-white" style={{borderColor:"1px solid #EBE6E6"}}>Quick Start Quiz</button>
+                        <button className="p-2 w-100 w-sm-50 rounded-1 bg-white" style={{borderColor:"1px solid #EBE6E6"}} onClick={GoTOQuiz}>Quick Start Quiz</button>
                     </div>
                 </li>
             </ul>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 // import {UserContext} from "../components/ui/TeamToggle"
 
 const Header: React.FC = () => {
@@ -20,13 +20,15 @@ const Header: React.FC = () => {
     localStorage.setItem("Team", toggleLight.toString());
   };
 
+  const navigate = useNavigate();
+
   return (
     <header
       className={` d-flex flex-row justify-content-around align-items-center p-4 position-fixed w-100 top-0 z-1  ${toggleLight ? "HeaderToggle" : ""}`}
     >
       <div className="all1 d-flex align-items-center gap-2 ">
         <i className="fa-solid fa-graduation-cap fs-4"></i>
-        <h4>
+        <h4 onClick={() => navigate("/")} className="text-decoration-none">
           <span>Freshman</span>EXAM
         </h4>
       </div>
@@ -49,9 +51,12 @@ const Header: React.FC = () => {
           Contact
         </a>
         <div className="s1">
-          <a href="#" className=" text-decoration-none">
+          <Link
+            to="/User/Login"
+            className="loginD rounded-2 px-4 py-1 btn text-decoration-none text-start " 
+          >
             Login
-          </a>
+          </Link>
           <div className="search">
             <i className="fa-solid fa-magnifying-glass"></i>
             <input
@@ -67,8 +72,8 @@ const Header: React.FC = () => {
       {/* Search Box */}
       <div className="all3 d-flex gap-4 align-items-center">
         <Link
-          to="/UserLogin"
-          className="loginD rounded-2 px-3 py-1 btn text-decoration-none"
+          to="/User/Login"
+          className="loginD rounded-2 px-3 py-1 btn text-decoration-none shadow " style={{border:"1px solid var(--grean-color)"}}
         >
           Login
         </Link>

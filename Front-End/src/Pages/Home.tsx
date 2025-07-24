@@ -8,8 +8,12 @@ import Loader1 from "../components/ui/Loader1"
 import type { course } from "../types/Course";
 import api from "../lib/axios.tsx";
 import RateLimitWarning from "../components/ui/TimeLimit.tsx"
+import HomeUi from "../components/ui/HomeUi.tsx";
+import { useNavigate } from "react-router-dom";
 
 const Courses: React.FC = () => {
+
+    const navigation=useNavigate();
     
     const [IsRateLimited,setIsRateLimited] = useState(false)
     const [CourseData,setCourseData] = useState<course[]>([])
@@ -40,8 +44,11 @@ const Courses: React.FC = () => {
         fetchData()
     },[])
 
+
     return (
-        <>
+        <>  
+            <HomeUi />
+
              {Loading && <Loader1 />}
             {CourseData.length > 0 && !IsRateLimited && (
 
@@ -57,6 +64,12 @@ const Courses: React.FC = () => {
 
             )}
             {IsRateLimited && <RateLimitWarning/>}
+
+            <div className="text-center">
+                <button className="my-5 py-2 px-4 rounded-3 bg-white text-shadow" style={{ border: "1px solid #D6D6D6" }} onClick={() => navigation("/courses")}>
+                    View All Courses
+                </button>
+            </div>
         </>
     ); 
 

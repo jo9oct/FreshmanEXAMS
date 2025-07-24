@@ -30,7 +30,7 @@ const ChapterView: React.FC = () => {
            const  matchedCourse = res.data.find(
               (course) => course.CourseCode === CourseCode
             );
-    
+  
             if (matchedCourse) {
               console.log(matchedCourse);
               setChapterData(matchedCourse.Chapters);

@@ -40,8 +40,23 @@ const Courses: React.FC = () => {
     },[])
 
     return (
-        <>
-             {Loading && <Loader1 />}
+        <>  
+
+            <div className="d-flex flex-column justify-content-center align-items-center container text-center">
+                <h2>All Freshman Courses</h2>
+                <p className="col-5">Choose from our comprehensive collection of Ethiopian university freshman courses. 
+                    Each course includes chapter-based quizzes with instant feedback.</p>
+                <div className="d-flex justify-content-center align-items-center mb-4 w-25 mt-5 shadow-sm" style={{border: '1px solid #ccc', borderRadius: '5px'}}>
+                    <i className="fa-solid fa-magnifying-glass mx-3 " ></i>
+                    <input 
+                        type="search"
+                        className="form-control fa-solid fa-magnifying-glass border-0"
+                        placeholder="Search ..."
+                    />
+                </div>
+            </div>
+
+            {Loading && <Loader1 />}
             {CourseData.length > 0 && !IsRateLimited && (
 
                 <div className="container py-5">

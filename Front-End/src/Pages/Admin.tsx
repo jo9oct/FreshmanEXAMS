@@ -6,7 +6,6 @@ const Admin: React.FC = () => {
 
     return (
         <>
-<<<<<<< HEAD
 <div 
 	style={{
 		display: "flex",
@@ -567,9 +566,6 @@ const Admin: React.FC = () => {
 		</div>
 	</div>
 </div>
-=======
-            
->>>>>>> 8788c92 (first front with back commit)
         </>
     );
 };

@@ -17,10 +17,6 @@
   /* color: ; */
 }
 
-b{
-  color: #ce0e0ecd;
-}
-
 /* header */
 
 header{
@@ -63,6 +59,7 @@ header .search{
   background-color: white;
   margin-right: 20px;
 }
+
 header .all2 .s1{
   display: none;
 }
@@ -78,6 +75,10 @@ header .search input{
 }
 .icon-hide .menu{
   font-size: xx-large;
+}
+.all3 .loginD:hover{
+  transform: scale(1.1);
+  transition: all .5s;
 }
 header .all2 a:hover{
   color: var(--grean-color);
@@ -132,6 +133,16 @@ footer .border-top {
   background-color: #179227; 
 }
 
+/* BlogPost Detail */
+.back:hover{
+    transform: scale(1.1);
+    transition: all .5s;
+}
+.back:active{
+    transform: scale(0.9);
+    transition: all .5s;
+}
+
 
 /* all media */
 
@@ -174,6 +185,9 @@ footer .border-top {
    }
    .all1{
       margin-left: -50px;
+   }
+   .all3 .loginD{
+      display: none;
    }
    .all3 .moon{
       display: none;

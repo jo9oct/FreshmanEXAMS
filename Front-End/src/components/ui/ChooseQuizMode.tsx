@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 const ChooseQuizMode: React.FC = () => {
 
     const navigate=useNavigate()
+    const HandleChooseMode = (mode: string, timed: boolean) => {
+        navigate(`/Course/QuizMode`, {state: { mode : mode, timed : timed } });
+    }
 
     return (
         <>
@@ -29,11 +32,11 @@ const ChooseQuizMode: React.FC = () => {
                 </div>
                 <p className="fs-4 fw-semibold my-5 text-center text-decoration-underline">Choose Quiz Mode:</p>
                 <div className="d-flex gap-4 flex-wrap  justify-content-center">
-                    <div className="d-flex flex-column justify-content-center align-items-center shadow-sm rounded-2 px-2 py-1" style={{cursor:"pointer" , width:"20rem" , border:"1px groove #EBE6E6" , backgroundColor:"#22CA39"}} onClick={() => navigate("/courses")}>
+                    <div className="d-flex flex-column justify-content-center align-items-center shadow-sm rounded-2 px-2 py-1" style={{cursor:"pointer" , width:"20rem" , border:"1px groove #EBE6E6" , backgroundColor:"#22CA39"}} onClick={() => HandleChooseMode("test", false)}>
                         <p className="fs-5 fw-demibold">Practice Mode</p>
                         <p className="text-black-50">No time limit, learn at your own pace</p>
                     </div>
-                    <div className="d-flex flex-column justify-content-center align-items-center shadow-sm rounded-2 px-2 py-1" style={{cursor:"pointer" , width:"20rem" , border:"1px groove #EBE6E6" , backgroundColor:"#fff"}} onClick={() => navigate("/courses")}>
+                    <div className="d-flex flex-column justify-content-center align-items-center shadow-sm rounded-2 px-2 py-1" style={{cursor:"pointer" , width:"20rem" , border:"1px groove #EBE6E6" , backgroundColor:"#fff"}} onClick={() => HandleChooseMode("test",true)}>
                         <p className="fs-5 fw-demibold">Timed Mode</p>
                         <p className="text-black-50">3 minutes (3:00)</p>
                     </div>

@@ -7,6 +7,7 @@ import api from "../lib/axios.tsx";
 import RateLimitWarning from "../components/ui/TimeLimit.tsx";
 import type { blog } from "../types/Blog";
 import BlogPost from "../components/BlogPost.tsx";
+import { Link } from "react-router-dom";
 
 const Blogs: React.FC = () => {
 
@@ -42,13 +43,19 @@ const Blogs: React.FC = () => {
       return (
          <>
 
+            <div className="container text-center my-5">
+               <h3 className="mb-4">Study Tips and Educational Blog</h3>
+               <i className="col-5">Expert advice, study strategies, and motivation for Ethiopian freshman students
+                  learn from academic experts and successful students</i>
+            </div>
+
             <div className="container py-3">
 
                <div className="card mb-5 shadow border-0">
                   <div className="row g-0 flex-column flex-md-row">
-                     <div className="col-md-4">
+                     <div className="col-md-4" style={{ height: "300px" }}>
                            <img
-                              src="/public/images1.jpg"
+                              src={BlogData[0]?.BlogImg}
                               className="img-fluid rounded-start w-100 h-100"
                               alt="..."
                               style={{ objectFit: 'cover' }}
@@ -69,39 +76,38 @@ const Blogs: React.FC = () => {
                                  </div>
                                  <div className="d-flex gap-2 align-items-center">
                                        <img src="/public/clock.png" alt="clock" width={20} height={20} />
-                                       <p className="mb-0">8 min read</p>
+                                       <p className="mb-0">{BlogData[0]?.BlogTime} min read</p>
                                  </div>
                               </div>
-                              <h5 className="card-title">How to Prepare for the Freshman Exam: A Complete Guide</h5>
+                              <h5 className="card-title">{BlogData[0]?.BlogTitle}</h5>
                               <p className="card-text">
-                              Discover proven strategies and techniques to excel in your Ethiopian University Freshman Exam —
-                              from creating a study schedule to mastering exam techniques.
+                               {BlogData[0]?.BlogDescription}
                               </p>
-                              <a href="#" className="btn btn-primary">Read Full Article</a>
+                              <Link  to="/blog/detail" state={{ BlogData : BlogData[0] }}> <a href="#" className="btn btn-primary">Read Full Article</a> </Link>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
                
-                  <div className="d-flex justify-content-center container mb-4">
-                        {Loading ? (
-                           <Loader1 />
-                        ) : IsRateLimited ? (
-                           <RateLimitWarning />
-                        ) : BlogData.length > 0 ? (
-                           
-                                 <div className="row justify-content-start">
-                                    {BlogData.map((data: blog) => (
-                                          <div key={data._id} className="col-12 col-md-5 col-lg-4 mb-4">
-                                          <BlogPost data={data} />
-                                          </div>
-                                    ))}
-                                 </div>
-                        ) : (
-                           <p className="text-muted d-flex justify-content-center align-items-center gap-2"  style={{height:"65vh",fontSize:"xx-large"}}><span className="text-danger fw-bold fs-2">No chapters </span> available for this course.</p>
-                        )}
-                  </div>
+               <div className="d-flex justify-content-center container mb-4">
+                     {Loading ? (
+                        <Loader1 />
+                     ) : IsRateLimited ? (
+                        <RateLimitWarning />
+                     ) : BlogData.length > 0 ? (
+                        
+                              <div className="row justify-content-start">
+                                 {BlogData.slice(1).map((data: blog) => (
+                                       <div key={data._id} className="col-12 col-md-5 col-lg-4 mb-4">
+                                       <BlogPost data={data} />
+                                       </div>
+                                 ))}
+                              </div>
+                     ) : (
+                        <p className="text-muted d-flex justify-content-center align-items-center gap-2"  style={{height:"65vh",fontSize:"xx-large"}}><span className="text-danger fw-bold fs-2">No Blog </span> Post available.</p>
+                     )}
+               </div>
 
          </>
       ); 

@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 export const GetBlogs = async (req,res) => {
     
     try{
-        const Blog=await Blogs.find({}).sort({createdAt:-1})
+        const Blog=await Blogs.find({BlogPublish: true}).sort({createdAt:-1})
         res.status(200).json(Blog)
     }catch(error){
         console.error("Error in fetching Blog" , error.message)
@@ -37,13 +37,13 @@ export const GetBlogsById = async (req,res) => {
 export const CreateBlogs= async (req, res) => {
     const BlogData = req.body;
   
-    if (!BlogData.BlogTitle || !BlogData.BlogSlug || !BlogData.BlogContent || !BlogData.BlogAuthor || !BlogData.BlogTag || !BlogData.BlogPublish || !BlogData.BlogImg || !BlogData.BlogTime) {
+    if (!BlogData.BlogTitle || !BlogData.BlogSlug || !BlogData.BlogContent || !BlogData.BlogDescription || !BlogData.BlogTag || !BlogData.BlogPublish === undefined || !BlogData.BlogImg || !BlogData.BlogTime) {
       return res.status(400).json({
         success: false,
         message: "Please provide all required fields",
       });
     }
-  
+
     try {
       
       const newBlog = new Blogs(BlogData);

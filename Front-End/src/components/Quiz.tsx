@@ -1,12 +1,34 @@
 
 import React,{useState} from "react";
 import QuizTimeCount from "./ui/QuizTimeCount";
+import type { allQuestions ,question } from "../types/Question";
 
-const Quiz: React.FC = () => {
+interface TestResult {
+    question: string;   
+}
+
+type ChapterCardsProps = {
+  data: allQuestions;
+};
+
+const Quiz: React.FC<ChapterCardsProps> = ({data}) => {
+
+
+
+    const [mode, setMode] = useState<'pre-test' | 'test' | 'results'>('pre-test');
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);    
+    const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+    const [answers, setAnswers] = useState<TestResult[]>([]);
+    const [TimeStatus, setTimeStatus] = useState<boolean>(false);
+    const [timeLeft, setTimeLeft] = useState<number | null>(null);
+    const [IsRateLimited,setIsRateLimited] = useState(false);
+    const [QuestionData,setQuestionData] = useState<allQuestions[]>([]);
+
 
     const [selected, setSelected] = useState<string>('');
 
     return (
+        
         <>
             <div>
                 <div className="shadow p-4 rounded-3" style={{border:"1px solid #CDC6C6" , margin:"30px 70px"}} >
@@ -16,7 +38,7 @@ const Quiz: React.FC = () => {
                 </div>
                 <div className="shadow p-4" style={{margin:"30px 70px"}}>
                     <div>
-                        <p>1.Which of the following is a correct sentence?</p>
+                        <p>{data.Questions[0].question}</p>
                         <div style={{paddingLeft:"15px"}}>
                             <ul className="list-group">
                                 <li className="list-group-item mb-3">
@@ -31,7 +53,7 @@ const Quiz: React.FC = () => {
                                     onChange={(e) => setSelected(e.target.value)}
                                     />
                                     <label className="form-check-label" htmlFor="firstRadio">
-                                    First radio
+                                    {data.Questions[0].options[0]}
                                     </label>
                                 </li>
 
@@ -47,7 +69,7 @@ const Quiz: React.FC = () => {
                                     onChange={(e) => setSelected(e.target.value)}
                                     />
                                     <label className="form-check-label" htmlFor="secondRadio">
-                                    Second radio
+                                    {data.Questions[0].options[1]}
                                     </label>
                                 </li>
 
@@ -63,7 +85,7 @@ const Quiz: React.FC = () => {
                                     onChange={(e) => setSelected(e.target.value)}
                                     />
                                     <label className="form-check-label" htmlFor="thirdRadio">
-                                    Third radio
+                                    {data.Questions[0].options[2]}
                                     </label>
                                 </li>
 
@@ -79,7 +101,7 @@ const Quiz: React.FC = () => {
                                     onChange={(e) => setSelected(e.target.value)}
                                     />
                                     <label className="form-check-label" htmlFor="fourthRadio">
-                                    Fourth radio
+                                    {data.Questions[0].options[3]}
                                     </label>
                                 </li>
                             </ul>

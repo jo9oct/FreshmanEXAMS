@@ -21,7 +21,7 @@ const CourseCards: React.FC<CourseCardsProps> = ({data}) => {
                 <p className="mb-0">10 Chapters</p>
                 <p className="mb-0">100 Questions</p>
                 </div>
-                <Link to={`/Chapter/${data.CourseCode}`}  state={{ courseData : data }} className="btn text-white mb-2" style={{ backgroundColor: "#179227" , textDecoration: 'none', color: 'inherit' }}>View Courses</Link>
+                <Link to={`/Chapter/${data.CourseCode}`}  state={{ courseData : data }} className="btn text-white mb-2" style={{ backgroundColor: "#179227" , textDecoration: 'none', color: 'inherit' }}>View Chapters</Link>
                 <button className="btn bg-light text-dark" style={{ border: "1px solid #E0D4D4" }}>Quick Start Quiz</button>
             </div>
 

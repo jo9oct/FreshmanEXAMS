@@ -3,7 +3,7 @@ export type blog = {
     BlogTitle: string;
     BlogSlug: string;
     BlogContent: string;
-    BlogAuthor: string;
+    BlogDescription: string;
     BlogTag: string;
     BlogPublish: boolean;
     BlogImg: string;
